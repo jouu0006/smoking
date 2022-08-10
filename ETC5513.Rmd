@@ -58,3 +58,18 @@ top_two <- rate_rank %>%
 top_two
   
 ```
+
+**(2).The figure of trend of death rate in Kiribati and Solomon Islands**
+```{r Kiribati and Solomonfigure,fig.cap = "Death rate in Kiribati and Solomon",echo = FALSE,message = FALSE,warning = FALSE}
+Kiribati_rate <- death_rate %>% 
+    select(-2) %>% 
+    rename("smoker_quantity" =    "Deaths...Cause..All.causes...Risk..Smoking...Sex..Both...Age..Age.standardized..Rate.") %>%
+    rename("Country" = "Entity") %>%
+    filter(Country == "Kiribati",
+           Year >= 2009)
+Kiribati_plot <- Kiribati_rate %>%
+  ggplot(mapping = aes(x = Year, 
+                       y = smoker_quantity)) +
+  geom_line() +
+  theme_bw() +
+  ggtitle("Kiribati trend of death rates from smoking")
