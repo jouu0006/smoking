@@ -1,12 +1,12 @@
 ---
-title: ""
+title: "Death rate from smoking"
 author:
-- familyname: 
-  othernames: 
+- familyname: Ou
+  othernames: Jingwen
   address: Monash University
-  email: 
+  email: jouu0006@student.monash.edu
   correspondingauthor: true
-  qualifications:  
+  qualifications:  32269633
 
 department: Faculty of Business and Statistic
 organization: Monash University ETC5513 
@@ -26,6 +26,7 @@ output:
     citation_package: biblatex
     toc: false
 ---
+
 ```{r,echo = FALSE,message = FALSE,warning = FALSE}
 library(tidyverse)
 library(ggplot2)
@@ -35,8 +36,12 @@ library(plotly)
 library(gridExtra)
 ```
 
-**Q1: Which two countries had the highest smoking death rates in 2019？**
-**Q2: What are the trends in these two countries over the past decade?**
+\clearpage
+
+### Introduction
+Smoking is one of the world's biggest health problems. Millions of people suffer from poor health as a result of smoking, and researchers estimate that smoking causes about 8 million premature deaths each year.
+
+**Q1: Which two countries had the highest smoking death rates in 2019？** **Q2: What are the trends in these two countries over the past decade?**
 
 ```{r read data}
 death_rate <- read.csv("Data/death-rate-smoking.csv")
@@ -59,8 +64,11 @@ top_two
   
 ```
 
+From the table of The two countries with the highest death rates from smoking\@ref(tab:toptwotable) we can see that at the top of the list is Kiribati with almost 0.37% death rate. And the following country is Solomon Islands which death rate is 0.33%.
+
 **(2).The figure of trend of death rate in Kiribati and Solomon Islands**
-```{r Kiribati and Solomonfigure,fig.cap = "Death rate in Kiribati and Solomon",echo = FALSE,message = FALSE,warning = FALSE}
+
+```{r KiribatiAndSolomonfigure,fig.cap = "Death rate in Kiribati and Solomon",echo = FALSE,message = FALSE,warning = FALSE}
 Kiribati_rate <- death_rate %>% 
     select(-2) %>% 
     rename("smoker_quantity" =    "Deaths...Cause..All.causes...Risk..Smoking...Sex..Both...Age..Age.standardized..Rate.") %>%
@@ -88,3 +96,9 @@ Solomon_plot <- Solomon_Islands_rate %>%
   ggtitle("Solomon Islands trend of death rates from smoking")
 gridExtra::grid.arrange(Kiribati_plot,Solomon_plot, nrow = 2)
 ```
+
+The graph of the trend of death rate in Kiribati and Solomon\@ref(fig:KiribatiAndSolomonfigure) shows that in the last decade, the number of deaths caused by smoking in Kiribati has been decreasing year by year. In Solomon Islands, the number fluctuated between 2009 to 2019 and has been on the rise in recent years.
+
+### Summary 
+
+To this dataset, I selected the data of the world of death rate from smoking from 2009 to do a research. The data means the annual number of deaths attributed to smoking per 100,000 people. My conclusion is Although the number of deaths from smoking is decreasing in some countries, we still need to pay attention to the health risks of smoking. Smoking is not only harmful to your own health, but also affects the health of those around you. Therefore, we should appeal the public to stop smoking.
