@@ -7,12 +7,6 @@ author:
   email: 
   correspondingauthor: true
   qualifications:  
-- familyname: 
-  othernames: 
-  address: Monash University
-  email: 
-  correspondingauthor: true
-  qualifications: 
 
 department: Faculty of Business and Statistic
 organization: Monash University ETC5513 
@@ -41,6 +35,11 @@ library(plotly)
 library(gridExtra)
 ```
 
+**Q1: Which two countries had the highest smoking death rates in 2019？**
+**Q2: What are the trends in these two countries over the past decade?**
 
+```{r read data}
+death_rate <- read.csv("Data/death-rate-smoking.csv")
+```
 
 
