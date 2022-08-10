@@ -1,9 +1,7 @@
 ---
 title: "Death rate from smoking"
 author:
-- familyname: Ou
-  othernames: Jingwen
-  address: Monash University
+- name: Jingwen Ou
   email: jouu0006@student.monash.edu
   qualifications:  32269633
 
