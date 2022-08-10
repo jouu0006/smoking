@@ -42,4 +42,19 @@ library(gridExtra)
 death_rate <- read.csv("Data/death-rate-smoking.csv")
 ```
 
+**(1).The table of top two countries**
 
+```{r toptwotable,echo = FALSE,message = FALSE,warning = FALSE}
+rate_rank <- death_rate %>%
+  filter(!is.na(Code), Year == 2019) %>%
+  rename("smoker_quantity" = "Deaths...Cause..All.causes...Risk..Smoking...Sex..Both...Age..Age.standardized..Rate.") %>%
+  rename("Country" = "Entity") %>%
+  group_by(Country) %>% 
+  summarise(rate = smoker_quantity/100000*100) %>%
+  arrange(desc(rate))
+top_two <- rate_rank %>%
+  head(2) %>%
+  kable(caption = "The two countries with the highest death rates from smoking")
+top_two
+  
+```
