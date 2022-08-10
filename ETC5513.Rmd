@@ -4,15 +4,13 @@ author:
 - name: Jingwen Ou
   email: jouu0006@student.monash.edu
   qualifications:  32269633
-
 department: Faculty of Business and Statistic
 organization: Monash University ETC5513 
 linestretch: 1.5
 output:
- html_document: default
  pdf_document: default
+ html_document: default
  word_document: default
-
 ---
 
 ```{r,echo = FALSE,message = FALSE,warning = FALSE}
