@@ -41,8 +41,6 @@ library(plotly)
 library(gridExtra)
 ```
 
-```{r}
-R
-```
+
 
 
